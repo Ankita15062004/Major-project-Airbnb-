@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+<body>
+  <h3>Create a New Listing</h3>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br><br>
+  <form method="POST" action="/listings" novalidate class="needs-validation">
+    <div class="mb-3">
+      <label for="title" class="form_label">Title</label>
+      <input name="listing[title]" placeholder="Add a Catchy title" type="text" class="form-control"  required/>
+      <div class="valid-feedback">Title looks good! </div>
+    </div>
+    
+
+    <div class="mb-3">
+      <label for="description" class="form_label">Description</label>
+      <textarea name="listing[description]" class="form-control" placeholder="enter description" required></textarea>
+      <div class="invalid-feedback">Please enter a short description  </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form_label">Image Link</label>
+      <input name="listing[image]" placeholder="Enter image URL/Link" type="text" class="form-control" />
+    </div>
+      <div class="row">
+    <div class="mb-3 col-md-4">
+      <label for="price" class="form_label">Price</label>
+      <input name="listing[price]" placeholder="Enter price" type="text" class="form-control" required />
+      <div class="invalid-feedback">Please enter a valid price.</div>
+    </div>
+
+    <div class="mb-3 col-md-8"> 
+      <label for="country" class="form_label">Country</label>
+      <input name="listing[country]" placeholder="India" type="text" class="form-control" required/>
+    </div>
+      <div class="invalid-feedback">Please enter a valid Country.</div>
+      </div>
+    
+    <div class="mb-3">
+      <label for="location" class="form_label">Location</label>
+      <input name="listing[location]" placeholder="Jaipur,Rajasthan" type="text" class="form-control" required />
+      <div class="invalid-feedback">Please enter a valid location.</div>
+    </div>
+  <br> <br>
+    <button class="btn btn-dark add-btn" type="submit">Add</button>
+  </form>
+</div>
+  </div>
+  <scriprt src="/js/scriprt.js" ></scriprt>
+</body>
