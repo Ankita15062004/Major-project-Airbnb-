@@ -44,12 +44,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 const store = MongoStore.create({
-  client: mongoose.connection.getClient(), // reuse existing Mongoose client
+  client: mongoose.connection.getClient(),
   crypto: {
-    secret: process.env.SECRET,
+    secret:"mysupersecretcode", 
   },
   touchAfter: 24 * 3600,
 });
+
 
 store.on("error", (err) => {
   console.log("❌ ERROR in MONGO SESSION STORE:", err);
@@ -59,7 +60,7 @@ store.on("error", (err) => {
 
 const sessionOptions = {
   store,
-  secret: process.env.SECRET,
+  secret: "mysupersecretcode", 
   resave:false,
   saveUninitialized: true,
   cookie: {
