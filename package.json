@@ -1,8 +1,4 @@
 {
-  "engines": {
-    "node": "20.15.1"
-  },
-
   "name": "major-fullstack-project-(airbean)",
   "version": "1.0.0",
   "main": "index.js",
